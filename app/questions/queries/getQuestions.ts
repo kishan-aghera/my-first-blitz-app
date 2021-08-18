@@ -18,7 +18,7 @@ export default resolver.pipe(
       take,
       count: () => db.question.count({ where }),
       query: (paginateArgs) =>
-        db.question.findMany({ ...paginateArgs, where, orderBy, include: { choices: true } }),
+        db.question.findMany({ ...paginateArgs, where, orderBy, include: { Choice: true } }),
     })
 
     return {
